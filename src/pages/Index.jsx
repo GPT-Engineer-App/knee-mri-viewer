@@ -1,39 +1,23 @@
-import React from "react";
-import { Box, Flex, Heading, Text, Image, Icon, Input, InputGroup, InputLeftElement, Grid, Divider } from "@chakra-ui/react";
-import { FaSearch, FaShare } from "react-icons/fa";
+import React, { useState } from "react";
+import { Box, Flex, Text, Image, Grid } from "@chakra-ui/react";
+import Header from "../components/Header";
 
+import { Heading } from "@chakra-ui/react";
 const Index = () => {
+  const [currentIndex, setCurrentIndex] = useState(74);
+  const dicomSeries = [...Array(120)];
+
   return (
     <Box>
-      {/* Top Section */}
-      <Flex align="center" justify="space-between" p={4}>
-        <Flex align="center">
-          <Icon as={FaSearch} mr={2} />
-          <Text>Buscar</Text>
-        </Flex>
-        <Heading size="lg">Joelho - RM (Sagittal)</Heading>
-        <Icon as={FaShare} />
-      </Flex>
+      <Header />
 
-      <Divider />
+      <Box p={8}>
+        <Heading mb={8}>Interactive MRI MSK Atlas</Heading>
+      </Box>
 
-      {/* Main Content Area */}
+      {}
       <Grid templateColumns="1fr 2fr 2fr" gap={4} p={4}>
-        {/* Left Side: Axial View */}
-        <Box>
-          <Image src="https://images.unsplash.com/photo-1557733686-3f8641465d21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxheGlhbCUyMHZpZXclMjBrbmVlJTIwbXJpfGVufDB8fHx8MTcxMTEyMTMwMHww&ixlib=rb-4.0.3&q=80&w=1080" mb={2} />
-          <Text align="center">AXIAL</Text>
-        </Box>
-
-        {/* Middle: Coronal View */}
-        <Box>
-          <Image src="https://images.unsplash.com/photo-1510193806518-f731c70a35bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxjb3JvbmFsJTIwdmlldyUyMGtuZWUlMjBtcmklMjB3aXRoJTIwbGFiZWxzfGVufDB8fHx8MTcxMTEyMTMwMXww&ixlib=rb-4.0.3&q=80&w=1080" />
-        </Box>
-
-        {/* Right Side: Sagittal View */}
-        <Box>
-          <Image src="https://images.unsplash.com/photo-1510193806518-f731c70a35bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxzYWdpdHRhbCUyMHZpZXclMjBrbmVlJTIwbXJpJTIwd2l0aCUyMGxhYmVsc3xlbnwwfHx8fDE3MTExMjEzMDF8MA&ixlib=rb-4.0.3&q=80&w=1080" />
-        </Box>
+        {}
       </Grid>
 
       {/* Bottom Section */}
@@ -50,7 +34,7 @@ const Index = () => {
 
         {/* Scrollbar Indicator */}
         <Text ml={4} whiteSpace="nowrap">
-          75/120
+          {currentIndex + 1}/{dicomSeries.length}
         </Text>
       </Flex>
     </Box>
